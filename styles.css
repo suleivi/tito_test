@@ -1,0 +1,253 @@
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Geneva, Verdana, sans-serif;
+  color: #2b2b2b;
+  background-color: #fefefe;
+}
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  background-color: #f0c1a2;
+  border-bottom: 1px solid #e0d4c8;
+}
+
+.site-header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #5c3d2e;
+}
+
+.main-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #5c3d2e;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover {
+  color: #b3826a;
+}
+
+/* Hero Section */
+.hero {
+  background: #fff8f2;
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #4a342e;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+  color: #6f5a50;
+}
+
+.cta-button {
+  background-color: #f4c7a1;
+  color: #4a342e;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #f2b185;
+}
+
+/* Highlights */
+.highlights {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem 2rem;
+  background-color: #fcf7f3;
+  text-align: center;
+}
+
+.highlight h2 {
+  color: #5c3d2e;
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.highlight p {
+  color: #7a665d;
+  margin-bottom: 1rem;
+}
+
+.highlight a {
+  color: #b3826a;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #fff0e6;
+  padding: 2rem;
+  text-align: center;
+  border-top: 1px solid #e0d4c8;
+}
+
+.footer-info p {
+  color: #7a665d;
+  margin-bottom: 1rem;
+}
+
+.footer-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.footer-info a {
+  color: #5c3d2e;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.footer-info a:hover {
+  color: #b3826a;
+}
+
+
+
+
+.schedule-container {
+  display: flex;
+  gap: 2rem;
+  padding: 2rem;
+  background-color: #fef9f6;
+  color: #4a342e;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.left-panel,
+.calendar-panel,
+.time-panel {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.calendar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.calendar-nav button {
+  background-color: #f4c7a1;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+#month-year {
+  font-weight: bold;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.calendar-day {
+  padding: 0.75rem;
+  background-color: #fff0e6;
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.calendar-day:hover {
+  background-color: #f4c7a1;
+}
+
+.calendar-day.selected {
+  background-color: #f4b080;
+  color: white;
+}
+
+.time-button {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem;
+  border: 2px solid #f4c7a1;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.time-button:hover {
+  background-color: #fff0e6;
+}
+
+.time-button.selected {
+  background-color: #f4b080;
+  color: white;
+}
+
+.confirm-button {
+  display: block;
+  margin-top: 1rem;
+  background-color: #f4c7a1;
+  border: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #4a342e;
+  width: 100%;
+}
+
+.confirm-button:hover {
+  background-color: #f2b185;
+}
+
+.timezone {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #7a665d;
+}
+
+#selected-date {
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: #4a342e;
+}

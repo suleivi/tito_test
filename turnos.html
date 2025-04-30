@@ -1,0 +1,62 @@
+<!--<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule Classes</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header><h1>Class Reservations</h1></header>
+    <main>
+      <div id="calendar"></div>
+      <div id="auth">
+        <input type="text" placeholder="Phone Number" id="phone" />
+        <button onclick="authenticateUser()">Authenticate</button>
+      </div>
+      <div id="reservation-controls" style="display: none;">
+        <button onclick="reserveClass()">Reserve</button>
+        <button onclick="cancelReservation()">Cancel</button>
+        <button onclick="confirmPayment()">Confirm Payment</button>
+      </div>
+    </main>
+    <script src="script.js"></script>
+  </body>
+  </html>-->
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Schedule Classes</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="schedule-container">
+    <div class="left-panel">
+      <h2>Pottery Class</h2>
+      <p><strong>Duration:</strong> 60 min</p>
+      <p><strong>In Studio</strong></p>
+    </div>
+
+    <div class="calendar-panel">
+      <h3>Select a Date & Time</h3>
+      <div class="calendar-nav">
+        <button id="prev-month">&lt;</button>
+        <span id="month-year">July 2024</span>
+        <button id="next-month">&gt;</button>
+      </div>
+      <div class="calendar-grid" id="calendar-days">
+        <!-- Dynamic calendar will be populated here -->
+      </div>
+      <p class="timezone">Time zone: Local time</p>
+    </div>
+
+    <div class="time-panel">
+      <h4 id="selected-date">Select a day</h4>
+      <div class="time-slots" id="time-slots">
+        <!-- Time slots will appear here -->
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>

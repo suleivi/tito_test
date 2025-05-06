@@ -1,17 +1,52 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shop</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header><h1>Shop Ceramics</h1></header>
-    <main class="grid">
-      <div class="item"><h3>Cup</h3><p>$15</p><button>Add to Cart</button></div>
-      <div class="item"><h3>Plate</h3><p>$20</p><button>Add to Cart</button></div>
-      <div class="item"><h3>Decor Piece</h3><p>$30</p><button>Add to Cart</button></div>
-    </main>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pepito taller</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+        <h1 class="logo"> Pepito taller de Ceramica</h1>
+        <nav class="main-nav">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="shop.html">tienda</a></li>
+            <li><a href="turnos.html">Clases</a></li>
+            <li><a href="contacto.html"> Contacto personalizado</a></li>
+          </ul>
+        </nav>
+  </header>
+
+  <main class="shop-container">
+    <h1 class="shop-title">Nuestras piezas de Ceramica</h1>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="images/cup1.jpg" alt="Ceramic Cup" />
+        <h3>tazas</h3>
+        <p>Taza de cerámica duradera..</p>
+        <div class="precio">$18000</div>
+        <button>comprar</button>
+      </div>
+      <div class="product-card">
+        <img src="images/plate1.jpg" alt="Ceramic Plate" />
+        <h3>Plato de gres</h3>
+        <p>Perfecto para comidas diarias y ocasiones especiales.</p>
+        <div class="precio">$24000</div>
+        <button>comprar</button>
+      </div>
+      <div class="product-card">
+        <img src="images/decor1.jpg" alt="Decor Piece" />
+        <h3>Florero de ceramica</h3>
+        <p>Una adición estética a su espacio vital.</p>
+        <div class="precio">$35000</div>
+        <button>comprar</button>
+      </div>
+    
+    </div>
+  </main>
+
     <script src="script.js"></script>
   </body>
   </html>

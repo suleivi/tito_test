@@ -116,13 +116,4 @@
     renderCalendar(currentDate);
   });
   
-  /* You’ll need a backend route at /api/reservations to process reservations. Example with Express.js:
-  
-  app.post('/api/reservations', (req, res) => {
-    const { date, time } = req.body;
-    // Validate and store in DB (pseudo-code)
-    reservations.push({ date, time });
-    res.json({ status: 'success' });
-  });
-  */
   

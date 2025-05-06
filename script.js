@@ -30,7 +30,7 @@
     const timeSlotsElem = document.getElementById('time-slots');
     const monthYearElem = document.getElementById('month-year');
   
-    let currentDate = new Date(2024, 6); // July 2024
+    let currentDate = new Date(2024, 6); 
     const availableTimes = ["10:00am", "11:00am", "1:00pm", "2:30pm", "4:00pm"];
   
     function renderCalendar(date) {

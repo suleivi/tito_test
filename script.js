@@ -117,3 +117,155 @@
   });
   
   
+
+
+/* second */ 
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // --- Common Image Hover Effect for Cards ---
+    // (Existing code, ensure it's still present)
+    const allCardsWithImages = document.querySelectorAll('.class-card, .product-card');
+
+    allCardsWithImages.forEach(card => {
+        const mainImage = card.querySelector('img');
+        const defaultImage = card.dataset.defaultImage;
+        const hoverImage = card.dataset.hoverImage;
+
+        if (mainImage && defaultImage && hoverImage) {
+            const img = new Image();
+            img.src = hoverImage;
+
+            card.addEventListener('mouseenter', () => {
+                mainImage.style.opacity = '0';
+                setTimeout(() => {
+                    mainImage.src = hoverImage;
+                    mainImage.style.opacity = '1';
+                }, 150);
+            });
+
+            card.addEventListener('mouseleave', () => {
+                mainImage.style.opacity = '0';
+                setTimeout(() => {
+                    mainImage.src = defaultImage;
+                    mainImage.style.opacity = '1';
+                }, 150);
+            });
+        }
+    });
+
+    // --- Basic Calendar Interactivity (Visual only, no actual date logic) ---
+    // (Existing code, ensure it's still present)
+    const calendarGrid = document.querySelector('.calendar-grid');
+    if (calendarGrid) {
+        calendarGrid.addEventListener('click', (event) => {
+            const clickedSpan = event.target;
+            if (clickedSpan.tagName === 'SPAN') {
+                const currentlySelected = calendarGrid.querySelector('.selected');
+                if (currentlySelected) {
+                    currentlySelected.classList.remove('selected');
+                }
+                clickedSpan.classList.add('selected');
+                console.log(`Date selected: ${clickedSpan.textContent} July 2024 (Visual only)`);
+            }
+        });
+    }
+
+    const prevMonthBtn = document.querySelector('.calendar-arrow:first-child');
+    const nextMonthBtn = document.querySelector('.calendar-arrow:last-child');
+    const monthYearDisplay = document.querySelector('.calendar-month-year');
+
+    if (prevMonthBtn && nextMonthBtn && monthYearDisplay) {
+        monthYearDisplay.textContent = "July 2024";
+
+        prevMonthBtn.addEventListener('click', () => {
+            console.log("Previous month clicked (functionality not implemented)");
+        });
+
+        nextMonthBtn.addEventListener('click', () => {
+            console.log("Next month clicked (functionality not implemented)");
+        });
+    }
+
+    // --- Store Page Product & Pagination Logic ---
+    // (Existing code, ensure it's still present)
+    const productsGrid = document.getElementById('productsGrid');
+    const paginationContainer = document.getElementById('pagination');
+    const productsPerPage = 10;
+    let currentPage = 1;
+    let allProducts = [];
+
+    async function fetchProducts() {
+        if (!productsGrid || !paginationContainer) return; // Only run if store page elements exist
+        try {
+            // Replace with your actual API endpoint if you build one
+            const response = await fetch('http://localhost:5000/api/products');
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            allProducts = await response.json();
+            renderProducts(currentPage);
+            setupPagination();
+        } catch (error) {
+            console.error('Error fetching products:', error);
+            productsGrid.innerHTML = '<p>Failed to load products. Please try again later.</p>';
+        }
+    }
+
+    function renderProducts(page) { /* ... existing code ... */ }
+    function setupPagination() { /* ... existing code ... */ }
+    function updatePaginationButtons() { /* ... existing code ... */ }
+    function applyProductCardHoverEffects() { /* ... existing code ... */ }
+
+    if (productsGrid && paginationContainer) {
+        fetchProducts();
+    }
+
+
+    // --- New: Inspiration Gallery Logic ---
+    const inspirationGallery = document.getElementById('inspirationGallery');
+
+    // Array of inspiration image URLs
+    const inspirationImages = [
+        "https://via.placeholder.com/350x250/E0E0E0/000000?text=Custom+Piece+1",
+        "https://via.placeholder.com/350x400/D0D0D0/000000?text=Custom+Piece+2",
+        "https://via.placeholder.com/350x300/C0C0C0/000000?text=Custom+Piece+3",
+        "https://via.placeholder.com/350x200/B0B0B0/000000?text=Custom+Piece+4",
+        "https://via.placeholder.com/350x350/A0A0A0/000000?text=Custom+Piece+5",
+        "https://via.placeholder.com/350x280/909090/000000?text=Custom+Piece+6",
+        "https://via.placeholder.com/350x220/808080/000000?text=Custom+Piece+7",
+        "https://via.placeholder.com/350x380/707070/000000?text=Custom+Piece+8",
+        "https://via.placeholder.com/350x250/606060/000000?text=Custom+Piece+9",
+        "https://via.placeholder.com/350x300/505050/000000?text=Custom+Piece+10",
+        "https://via.placeholder.com/350x200/404040/000000?text=Custom+Piece+11",
+        "https://via.placeholder.com/350x350/303030/000000?text=Custom+Piece+12"
+        // Add more image URLs as needed
+    ];
+
+    function renderInspirationGallery() {
+        if (!inspirationGallery) return; // Only run if gallery element exists
+
+        inspirationGallery.innerHTML = ''; // Clear existing gallery
+        inspirationImages.forEach(imageUrl => {
+            const galleryItem = document.createElement('div');
+            galleryItem.classList.add('gallery-item');
+            galleryItem.innerHTML = `<img src="${imageUrl}" alt="Custom Pottery Idea">`;
+            inspirationGallery.appendChild(galleryItem);
+        });
+    }
+
+    // Call this function when the DOM is ready for the contact page
+    if (inspirationGallery) {
+        renderInspirationGallery();
+    }
+
+    // --- Add basic functionality for "View on Map" (if applicable) ---
+    const viewOnMapBtn = document.querySelector('.view-on-map');
+    if (viewOnMapBtn) {
+        viewOnMapBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert("This would open a map link to your studio location!");
+        });
+    }
+
+});

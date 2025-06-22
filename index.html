@@ -1,54 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pepito taller</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pepito Ceramica</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-        <h1 class="logo"> Pepito taller de Ceramica</h1>
-        <nav class="main-nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">tienda</a></li>
-            <li><a href="turnos.html">Clases</a></li>
-            <li><a href="contacto.html"> Contacto personalizado</a></li>
-          </ul>
-        </nav>
-  </header>
-  <main>
-         <section class="hero">
-            <div class="hero-text">
-            <h1>Taller de Ceramica Artesanal</h1>
-             <p>Explora nuestra colección de tazas, platos y artículos de decoración para el hogar. Reserva clases o solicita trabajos personalizados.</p>
-             <a href="shop.html" class="cta-button">Shop Now</a>
-           </div>
-         </section>
-          <section class="highlights">
-           <div class="highlight">
-             <h2>Clases en el taller</h2>
-             <p>Únete a nuestras clases de cerámica semanales o quincenales, para todos los niveles.</p>
-             <a href="turnos.html">Reservar turnos</a>
-           </div>
-           <div class="highlight">
-             <h2>Colaboraciones personalizadas</h2>
-             <p>¿Tienes un proyecto especial en mente? ¡Contanos!</p>
-             <a href="contacto.html">Enviar Solicitud</a>
-           </div>
-          </section>
-    <footer class="site-footer">
-        <div class="footer-info">
-          <p>&copy; 2025 Pepito Taller de ceramica. Todos los derechos reservados.</p>
-          <ul>
-            <li><a href="#">Instagram</a></li>
-            <li><a href="#">Contacto</a></li>
-            <li><a href="#"> Envios & Devoluciones</a></li>
-          </ul>
+    <header>
+        <div class="header-top">
+            <p> Buenos Aires, Argentina &#x2022; Envios a todo el pais &#x2022; Clases presenciales</p>
         </div>
-      </footer>
-  </main>
-  <script src="script.js"></script>
+        <nav class="main-nav">
+            <div class="logo">
+                <a href="#">Pepito Caremica</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Tienda</a></li>
+                <li><a href="#" class="active">Sobre el taller</a></li>
+                <li><a href="#" class="active">Clases</a></li>
+                <li><a href="#" class="active">Contacto</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#">&#128269;</a> <a href="#">&#128100;</a> <a href="#">&#128722;</a> </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <img src="https://via.placeholder.com/1600x600/D3D3D3/000000?text=Exquisite+Handcrafted+Ceramics" alt="Hero Image: Handcrafted Ceramics">
+            <div class="hero-text">
+                <h1>BLABLA</h1>
+                <p>blablabla</p>
+                <button href="/shop.html" class="cta-button">Ir a la tienda</button>
+            </div>
+        </section>
+
+        <section class="store-preview">
+            <h2>Featured Ceramics</h2>
+            <div class="carousel-container">
+                <div class="carousel">
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/300x300/F5F5DC/000000?text=Ceramic+Bowl+1" alt="Ceramic Bowl">
+                        <h3>Abstract Bowl</h3>
+                        <p>$45.00</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/300x300/E6E6FA/000000?text=Ceramic+Vase+1" alt="Ceramic Vase">
+                        <h3>Textured Vase</h3>
+                        <p>$60.00</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/300x300/FFF0F5/000000?text=Ceramic+Planter+1" alt="Ceramic Planter">
+                        <h3>Organic Planter</h3>
+                        <p>$35.00</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/300x300/F0F8FF/000000?text=Ceramic+Sculpture+1" alt="Ceramic Sculpture">
+                        <h3>Sculptural Piece</h3>
+                        <p>$75.00</p>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://via.placeholder.com/300x300/F5DEB3/000000?text=Ceramic+Mug+1" alt="Ceramic Mug">
+                        <h3>Handpainted Mug</h3>
+                        <p>$25.00</p>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="view-all-btn">View All Products</a>
+        </section>
+
+        <section class="classes-section">
+            <div class="classes-content">
+                <img src="https://via.placeholder.com/600x400/D8BFD8/000000?text=Ceramic+Class" alt="People making pottery">
+                <div class="classes-text">
+                    <h2>Unleash Your Creativity</h2>
+                    <p>Join our in-site ceramic classes and learn the art of pottery from experienced instructors. From beginner basics to advanced techniques, we have a class for everyone.</p>
+                    <button href="#" class="cta-button">View Class Schedule</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-section">
+            <div class="projects-content">
+                <div class="projects-text">
+                    <h2>Personalized Projects</h2>
+                    <p>Looking for something truly unique? We offer personalized ceramic project services. Whether it's a custom art piece, a special gift, or bespoke dinnerware, let's bring your vision to life.</p>
+                    <button href="#" class="cta-button">Start Your Project</button>
+                </div>
+                <img src="https://via.placeholder.com/600x400/B0C4DE/000000?text=Custom+Ceramics" alt="Custom ceramic pieces">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>Pepito ceramica</h3>
+                <p>Estudio y taller de ceramica de diseño</p>
+            </div>
+            <div class="footer-column">
+                <h3>Tienda</h3>
+                <ul>
+                    <li><a href="#">Coleciones</a></li>
+                    <li><a href="#">Vajilla</a></li>
+                    <li><a href="#">Bowls</a></li>
+                    <li><a href="#">Esculturas</a></li>
+                    <li><a href="#">Macetas</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Informacion</h3>
+                <ul>
+                    <li><a href="#">Sobre el taller</a></li>
+                    <li><a href="#">Etiqueta de clases presenciales</a></li> <!--https://www.amoca.org/studio1/classes/-->
+                    <li><a href="#">Compras, Envío y Devoluciones</a></li> 
+                    <!--mandamos a error con gatitos-->
+                    <li><a href="#">Términos de servicio</a></li>
+                    <!--https://www.ceramicsclasseslondon.com/health-and-safety
+                    https://www.ceramicsclasseslondon.com/terms-conditions-->
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3> <a href="contacto.html"></a>Contacto</h3>
+                <p>ceramica@pepito.com</p>
+                <div class="social-icons">
+                    <a href="#">IG;</a> <a href="#">Mailto;</a> <a href="#">WS</a> </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Pepito Taller de ceramica. Todos los derechos reservados.</p>
+        </div>
+
+    </footer>
+
+    <script>
+        // Basic carousel functionality (for demonstration)
+        const carousel = document.querySelector('.carousel');
+        let scrollAmount = 0;
+        const scrollStep = 320; // Adjust based on item width + margin
+
+        // You'd typically add navigation buttons or auto-scroll for a full carousel
+        // This is a minimal example to show horizontal scrolling
+        // To make it fully functional, you'd add left/right arrows and logic
+        // for smooth scrolling and boundary checks.
+    </script>
 </body>
 </html>

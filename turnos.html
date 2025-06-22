@@ -1,81 +1,151 @@
-
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pepito taller</title>
-  <link rel="stylesheet" href="styles.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pepito Ceramica</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header class="site-header">
-        <h1 class="logo"> Pepito taller de Ceramica</h1>
+    <header>
+        <div class="header-top">
+            <p> Buenos Aires, Argentina &#x2022; Envios a todo el pais &#x2022; Clases presenciales</p>
+        </div>
         <nav class="main-nav">
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="shop.html">tienda</a></li>
-            <li><a href="turnos.html">Clases</a></li>
-            <li><a href="contacto.html"> Contacto personalizado</a></li>
-          </ul>
+            <div class="logo">
+                <a href="#">Pepito Caremica</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Tienda</a></li>
+                <li><a href="#" class="active">Sobre el taller</a></li>
+                <li><a href="#" class="active">Clases</a></li>
+                <li><a href="#" class="active">Contacto</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#">&#128269;</a> <a href="#">&#128100;</a> <a href="#">&#128722;</a> </div>
         </nav>
-  </header>
-<!--<
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Schedule Classes</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <header><h1>Class Reservations</h1></header>
-    <main>
-      <div id="calendar"></div>
-      <div id="auth">
-        <input type="text" placeholder="Phone Number" id="phone" />
-        <button onclick="authenticateUser()">Authenticate</button>
-      </div>
-      <div id="reservation-controls" style="display: none;">
-        <button onclick="reserveClass()">Reserve</button>
-        <button onclick="cancelReservation()">Cancel</button>
-        <button onclick="confirmPayment()">Confirm Payment</button>
-      </div>
+    </header>
+
+    <main class="classes-main-content">
+        <section class="page-title-section">
+            <h1>Clases regulares de Ceramica en Buenos Aires</h1>
+        </section>
+
+        <section class="classes-listing">
+            <div class="classes-grid">
+                <div class="class-card" data-default-image="https://via.placeholder.com/300x300/EBDCB9/000000?text=Class+1+Default" data-hover-image="https://via.placeholder.com/300x300/D4B89F/000000?text=Class+1+Hover">
+                    <div class="class-image-container">
+                        <img src="https://via.placeholder.com/300x300/EBDCB9/000000?text=Class+1+Default" alt="One Day Pottery Class" class="class-main-image">
+                    </div>
+                    <h3>One Day Pottery Class</h3>
+                    <p class="price">$75.00 USD</p>
+                    <a href="#" class="btn">Choose Options</a>
+                </div>
+
+                <div class="class-card" data-default-image="https://via.placeholder.com/300x300/D4B89F/000000?text=Class+2+Default" data-hover-image="https://via.placeholder.com/300x300/EBDCB9/000000?text=Class+2+Hover">
+                    <div class="class-image-container">
+                        <img src="https://via.placeholder.com/300x300/D4B89F/000000?text=Class+2+Default" alt="4 Week Intensive Ceramic Class" class="class-main-image">
+                    </div>
+                    <h3>4 Week Intensive Ceramic Class</h3>
+                    <p class="price">$280.00 USD</p>
+                    <a href="#" class="btn">Choose Options</a>
+                </div>
+
+                <div class="class-card" data-default-image="https://via.placeholder.com/300x300/EBDCB9/000000?text=Class+3+Default" data-hover-image="https://via.placeholder.com/300x300/D4B89F/000000?text=Class+3+Hover">
+                    <div class="class-image-container">
+                        <img src="https://via.placeholder.com/300x300/EBDCB9/000000?text=Class+3+Default" alt="Private Wheel Pottery Class" class="class-main-image">
+                    </div>
+                    <h3>Private Wheel Pottery Class</h3>
+                    <p class="price">$150.00 USD</p>
+                    <a href="#" class="btn">Choose Options</a>
+                </div>
+
+                <div class="class-card" data-default-image="https://via.placeholder.com/300x300/D4B89F/000000?text=Class+4+Default" data-hover-image="https://via.placeholder.com/300x300/EBDCB9/000000?text=Class+4+Hover">
+                    <div class="class-image-container">
+                        <img src="https://via.placeholder.com/300x300/D4B89F/000000?text=Class+4+Default" alt="Pottery Workshop Gift Card" class="class-main-image">
+                    </div>
+                    <h3>Pottery Workshop Gift Card</h3>
+                    <p class="price">$100.00 USD</p>
+                    <a href="#" class="btn">Choose Options</a>
+                </div>
+            </div>
+            <button class="view-all-btn">VIEW ALL</button>
+        </section>
+
+        <section class="class-reservations-section">
+            <h1>Reserva y disponibilidad de turnos</h1>
+            <div class="reservation-grid">
+                <div class="reservation-column auth-column">
+                    <input type="text" placeholder="Phone Number">
+                    <button class="btn authenticate-btn">Autenticación</button>
+                </div>
+                <div class="reservation-column class-details-column">
+                    <h2>Clases en el Taller</h2>
+                    <p>Duración: 60 min</p>
+                    <p>Materiales y horno incluidos</p>
+                </div>
+                <div class="reservation-column calendar-column">
+                    <h2>Seleccionar Fecha y Horario</h2>
+                    <div class="calendar-nav">
+                        <button class="calendar-arrow">&lt;</button>
+                        <span class="calendar-month-year">July 2024</span>
+                        <button class="calendar-arrow">&gt;</button>
+                    </div>
+                    <div class="calendar-grid">
+                        <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span>
+                        <span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span>
+                        <span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+                        <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
+                        <span>28</span><span>29</span><span>30</span><span>31</span>
+                    </div>
+                </div>
+                <div class="reservation-column time-slot-column">
+                    <h2>Seleccione el día</h2>
+                    <p>Select a date to see available times.</p>
+                </div>
+            </div>
+        </section>
     </main>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-column">
+                <h3>Pepito ceramica</h3>
+                <p>Estudio y taller de ceramica de diseño</p>
+            </div>
+            <div class="footer-column">
+                <h3>Tienda</h3>
+                <ul>
+                    <li><a href="#">Coleciones</a></li>
+                    <li><a href="#">Vajilla</a></li>
+                    <li><a href="#">Bowls</a></li>
+                    <li><a href="#">Esculturas</a></li>
+                    <li><a href="#">Macetas</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Informacion</h3>
+                <ul>
+                    <li><a href="#">Sobre el taller</a></li>
+                    <li><a href="#">Etiqueta de clases presenciales</a></li>
+                    <li><a href="#">Compras, Envío y Devoluciones</a></li>
+                    <li><a href="#">Términos de servicio</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3> <a href="contacto.html"></a>Contacto</h3>
+                <p>ceramica@pepito.com</p>
+                <div class="social-icons">
+                    <a href="#">IG;</a> <a href="#">Mailto;</a> <a href="#">WS</a> </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Pepito Taller de ceramica. Todos los derechos reservados.</p>
+        </div>
+
+    </footer>
+
     <script src="script.js"></script>
-  </body>
-  </html>-->
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Schedule Classes</title>
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="schedule-container">
-    <div class="left-panel">
-      <h2>Clases en el tallet</h2>
-      <p><strong>Duracion:</strong> 60 min</p>
-      <p><strong>Materiales y horno incluidos</strong></p>
-    </div>
-
-    <div class="calendar-panel">
-      <h3>Seleccionar Fecha y Horario</h3>
-      <div class="calendar-nav">
-        <button id="prev-month">&lt;</button>
-        <span id="month-year">Julio 2025</span>
-        <button id="next-month">&gt;</button>
-      </div>
-      <div class="calendar-grid" id="calendar-days">
-      </div>
-    </div>
-
-    <div class="time-panel">
-      <h4 id="selected-date">Seleccione el dia</h4>
-      <div class="time-slots" id="time-slots">
-      
-      </div>
-    </div>
-  </div>
-  <script src="script.js"></script>
 </body>
 </html>

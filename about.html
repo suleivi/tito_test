@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pepito Ceramica</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap">
 </head>
 <body>
     <header>
@@ -14,53 +15,57 @@
         </div>
         <nav class="main-nav">
             <div class="logo">
-                <a href="#">Pepito Caremica</a>
+                <a href="/index.html">Pepito Ceramica</a>
             </div>
             <ul class="nav-links">
-                <li><a href="#" class="active">Tienda</a></li>
-                <li><a href="#" class="active">Sobre el taller</a></li>
-                <li><a href="#" class="active">Clases</a></li>
-                <li><a href="#" class="active">Contacto</a></li>
+                <li><a href="/shop.html" class="active">Tienda</a></li>
+                <li><a href="/about.html" class="active">Sobre el taller</a></li>
+                <li><a href="/clases.html" class="active">Clases</a></li>
+                <li><a href="/contacto.html" class="active">Contacto</a></li>
             </ul>
-            <div class="nav-icons">
-                <a href="#">&#128269;</a> <a href="#">&#128100;</a> <a href="#">&#128722;</a> </div>
+            <div class="nav-utility">
+                <span>ARS $ &#9660;</span> <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#" id="openCartBtn"><i class="fas fa-shopping-cart"></i></a>
+                <span class="cart-count">0</span>
+            </div>
         </nav>
     </header>
 
     <main class="about-main-content">
         <section class="about-hero">
-            <h1>Our Story</h1>
+            <h1>El taller</h1>
         </section>
 
         <section class="studio-business-section">
             <div class="content-left">
-                <img src="https://via.placeholder.com/600x400/D4B89F/000000?text=Owo+Studio+Interior" alt="Owo Ceramics Studio Interior">
+                <img src="/assets/taller.jpg" alt="foto-tallet">
             </div>
             <div class="content-right">
-                <h2>About Our Ceramic Business</h2>
-                <p>Owo Ceramics Studio is a Buenos Aires based design studio founded in 2018. Our raison d'être is to help people slow down, connect with their inner self, and embrace ritual by bringing beauty, art and consciousness to their daily life.</p>
-                <p>Our studio has a deep interest in the intersection of art and craft, the handmade, and thoughtful design. We aim to create unique, functional works of art that celebrate everyday rituals and make life more fun. Each piece is made by a completely handmade process in our studio, using local resources and privileging a type of production with minimal environmental impact. We believe in revaluing manual work and crafts over industrialized processes and mass production.</p>
-                <p>In addition to creating beautiful ceramic pieces, we also host pottery classes and workshops in our Buenos Aires studio. We are constantly exploring partnerships with different organizations to help raise awareness on the issues we are passionate about and welcome collaboration with like-minded, environmentally conscious brands.</p>
+                <h2>Acerca de nuestro taller de ceramica</h2>
+                <p>Pepito ceramica es un estudio de diseño con sede en Buenos Aires fundado en 2018. Nuestra razón de ser es ayudar a las personas conectarse con su yo interior y abrazar el ritual aportando belleza, arte y conciencia a su vida diaria.</p>
+                <p>Nuestro estudio tiene un profundo interés en la intersección del arte y la artesanía, lo hecho a mano y el diseño meticuloso. Nuestro objetivo es crear obras de arte únicas y funcionales que celebren los rituales cotidianos y hagan la vida más divertida. Cada pieza se elabora mediante un proceso completamente artesanal en nuestro taller, utilizando recursos locales y priorizando un tipo de producción con mínimo impacto ambiental. Creemos en revalorizar el trabajo manual y la artesanía por encima de los procesos industrializados y la producción en masa.</p>
+                <p>Además de crear hermosas piezas de cerámica, también impartimos clases y talleres de cerámica en nuestro estudio de Buenos Aires. Constantemente exploramos colaboraciones con diferentes organizaciones para concienciar sobre los temas que nos apasionan y agradecemos la colaboración con marcas afines y con conciencia ambiental.</p>
             </div>
         </section>
 
         <section class="about-founder-section">
-            <h2>About Our Founder, Leticia Gagetti</h2>
+            <h2>Sobre nuestra fundadora  </h2>
             <div class="founder-content">
                 <div class="founder-text">
-                    <p>Leticia Gagetti, the heart and soul behind Owo Ceramics, embarked on her journey with clay as a means to find stillness and connection in a fast-paced world. With a background in fine arts and a passion for sustainable living, she envisioned a space where art, utility, and mindfulness could converge.</p>
-                    <p>Driven by the desire to share the therapeutic benefits of working with clay, Leticia opened Owo Ceramics Studio in 2018. Her philosophy centers around creating functional art that brings joy and presence to daily rituals, emphasizing unique, handcrafted pieces over mass production.</p>
-                    <p>Leticia oversees every aspect of Owo Ceramics, from the initial design and hand-building process to glazing and firing. She also passionately leads many of the studio's popular pottery classes, sharing her expertise and fostering a supportive, creative environment for students of all skill levels.</p>
-                    <p>Her work is a testament to her belief in slow living, conscious consumption, and the enduring beauty of handmade objects.</p>
-                    <p>Connect with Leticia on:</p>
+                    <p>Pepa, se embarcó en su aventura con la arcilla como medio para encontrar quietud y conexión en un mundo acelerado. Con formación en bellas artes y pasión por la vida sostenible, imaginó un espacio donde el arte, la utilidad y la consciencia plena pudieran converger.</p>
+                    <p>Impulsada por el deseo de compartir los beneficios terapéuticos del trabajo con arcilla, Leticia abrió Owo Ceramics Studio en 2018. Su filosofía se centra en crear arte funcional que aporte alegría y presencia a los rituales diarios, priorizando piezas únicas y artesanales sobre la producción en masa.</p>
+                    <p>Pepa supervisa cada aspecto de Cerámica Owo, desde el diseño inicial y el proceso de fabricación manual hasta el esmaltado y la cocción. También dirige con pasión muchas de las populares clases de cerámica del estudio, compartiendo su experiencia y fomentando un ambiente de apoyo y creatividad para estudiantes de todos los niveles.</p>
+                    <p>Su trabajo es un testimonio de su creencia en la vida lenta, el consumo consciente y la belleza perdurable de los objetos hechos a mano.</p>
+                    <p>Conecta con pepa en:</p>
                     <p class="social-links">
-                        <a href="#" target="_blank">Instagram</a> | 
-                        <a href="#" target="_blank">Pinterest</a> | 
-                        <a href="#" target="_blank">Blog</a>
+                        <a href="https://www.instagram.com/" target="_blank">Instagram</a> | 
+                        <a href="https://www.pinterest.com/#" target="_blank">Pinterest</a> | 
+                        <a href="#https://www.x.com/" target="_blank">twitter</a>
                     </p>
                 </div>
                 <div class="founder-image">
-                    <img src="https://via.placeholder.com/500x600/EBDCB9/000000?text=Leticia+Gagetti" alt="Leticia Gagetti - Founder of Owo Ceramics">
+                    <img src="/assets/founder.png" alt="foto-founder">
                 </div>
             </div>
         </section>

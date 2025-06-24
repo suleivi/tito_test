@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contactanos</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap">
 </head>
 <body>
     <header>
@@ -14,75 +15,76 @@
         </div>
         <nav class="main-nav">
             <div class="logo">
-                <a href="#">Pepito Caremica</a>
+                <a href="/index.html">Pepito Ceramica</a>
             </div>
             <ul class="nav-links">
-                <li><a href="#" class="active">Tienda</a></li>
-                <li><a href="#" class="active">Sobre el taller</a></li>
-                <li><a href="#" class="active">Clases</a></li>
-                <li><a href="#" class="active">Contacto</a></li>
+                <li><a href="/shop.html" class="active">Tienda</a></li>
+                <li><a href="/about.html" class="active">Sobre el taller</a></li>
+                <li><a href="/clases.html" class="active">Clases</a></li>
+                <li><a href="/contacto.html" class="active">Contacto</a></li>
             </ul>
-            <div class="nav-icons">
-                <a href="#">&#128269;</a> <a href="#">&#128100;</a> <a href="#">&#128722;</a> </div>
+            <div class="nav-utility">
+                <span>ARS $ &#9660;</span> <a href="#"><i class="fas fa-search"></i></a>
+                <a href="#"><i class="fas fa-user"></i></a>
+                <a href="#" id="openCartBtn"><i class="fas fa-shopping-cart"></i></a>
+                <span class="cart-count">0</span>
+            </div>
         </nav>
     </header>
 
     <main class="contact-main-content">
         <section class="contact-hero">
-            <h1>Contact Us</h1>
+            <h1>Contactanos</h1>
         </section>
 
         <section class="visit-studio-section">
             <div class="studio-images">
-                <img src="https://via.placeholder.com/400x300/F0EFE7/000000?text=Studio+Entrance" alt="Studio Entrance">
-                <img src="https://via.placeholder.com/400x300/DDDCD6/000000?text=Studio+Interior" alt="Studio Interior">
-                <img src="https://via.placeholder.com/400x300/F5F5F0/000000?text=Class+in+Progress" alt="Class in Progress">
+                <img src="/assets/shop.png" alt="Studio Entrance">
+                <img src="/assets/people.png" alt="Studio Interior">
+                <img src="/assets/proyect.png" alt="Class in Progress">
             </div>
         </section>
 
-        <!-- Your provided form structure -->
         <section class="custom-request-section">
             <main class="shop-container">
-                <h1 class="shop-title">Request a Custom Piece or Group Class</h1>
+                <h1 class="shop-title">Envianos tu solicitud</h1>
                 <form action="/submit-custom-request" method="POST" class="custom-form">
-                    <label for="name">Your Name</label>
+                    <label for="name">Nombre</label>
                     <input type="text" id="name" name="name" required />
 
-                    <label for="email">Email Address</label>
+                    <label for="email">Email </label>
                     <input type="email" id="email" name="email" required />
 
-                    <label for="type">Type of Request</label>
+                    <label for="type">Tipo de solicitud</label>
                     <select id="type" name="type" required>
-                        <option value="">Please Select</option>
-                        <option value="piece">Custom Piece</option>
-                        <option value="group">Group Class</option>
+                        <option value="">Selecciona</option>
+                        <option value="piece">Piezas personalizadas</option>
+                        <option value="group">Clases en grupo</option>
+                        <option value="group">Clases particulares</option>
                         <option value="other">Other</option>
                     </select>
 
-                    <label for="details">Details</label>
+                    <label for="details">Detalles</label>
                     <textarea id="details" name="details" rows="6" required></textarea>
 
-                    <button type="submit" class="confirm-button btn">Submit Request</button>
+                    <button type="submit" class="confirm-button btn">Enviar</button>
                 </form>
             </main>
         </section>
                 <div class="studio-info-map">
                 <div class="studio-details">
-                    <h2>Visit The Studio</h2>
-                    <p>Humboldt 1450, C1414 CQR</p>
-                    <p>Palermo, Buenos Aires</p>
-                    <p>Argentina</p>
-                    <h3>Opening Hours</h3>
-                    <p>Monday to Friday: 9:00 AM - 6:00 PM</p>
-                    <p>Saturday: 10:00 AM - 2:00 PM</p>
-                    <h3>Phone Number</h3>
-                    <p>+54 11 1234 5678</p>
-                    <p>Limited parking available</p>
+                    <h2>Visita nuestro estudio</h2>
+                    <p>Asgard 1850, C1414 </p>
+                    <p>Palermo, Noruega</p>
+                    <p>Noruega</p>
+                    <h3>Horarios</h3>
+                    <p>Martes a Sabado: 9:00 AM - 6:00 PM</p>
+                    <h3>Telefono</h3>
+                    <p>+54 11 1234 55555</p>
                 </div>
                 <div class="studio-map">
-                    <!-- Google Maps Embed Placeholder -->
                     <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.629377926294!2d-58.42398292370757!3d-34.59128535560934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcb59966113b2b%3A0xc0d7c0f1604a37b3!2sHumboldt%201450%2C%20C1414%20CQR%2C%20Buenos%20Aires!5e0!3m2!1sen!2sar!4v1719000000000!5m2!1sen!2sar"
+                        src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d633.98497756859!2d5.323292685114625!3d60.38981752200952!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2sar!4v1750726082624!5m2!1ses!2sar"
                         width="100%"
                         height="450"
                         style="border:0;"
@@ -91,11 +93,13 @@
                         referrerpolicy="no-referrer-when-downgrade">
                     </iframe>
                 </div>
+            <!-- May delete
             </div>
-                    <section class="inspiration-gallery-section">
+            <section class="inspiration-gallery-section">
             <h2 class="gallery-title">Ideas for Your Custom Piece</h2>
             <div class="gallery-grid" id="inspirationGallery">
-                </div>
+                </div> -->
+            </div>
         </section>
 
 

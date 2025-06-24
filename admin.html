@@ -1,13 +1,13 @@
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tienda - Pepito Ceramica</title> 
+    <title>Pepito Ceramica</title>
+    <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 </head>
 <body>
     <header>
@@ -24,8 +24,7 @@
                 <li><a href="/clases.html" class="active">Clases</a></li>
                 <li><a href="/contacto.html" class="active">Contacto</a></li>
             </ul>
-             <a href="/admin.html" class="" id="crud";>C R U D</a>
-                <div class="nav-utility">
+            <div class="nav-utility">
                 <span>ARS $ &#9660;</span> <a href="#"><i class="fas fa-search"></i></a>
                 <a href="#"><i class="fas fa-user"></i></a>
                 <a href="#" id="openCartBtn"><i class="fas fa-shopping-cart"></i></a>
@@ -34,22 +33,57 @@
         </nav>
     </header>
 
-    <main class="store-main-content">
-        <section class="store-hero">
-            <h1>Todos los productos</h1>
-            <p>Nuestras piezas de Ceramica</p>
+    <main class="admin-main-content">
+        <section class="admin-hero">
+            <h1>Manejo CRUD de productos</h1>
+            <p>Crear, actualiza, y borrar productos de AIRTABLE</p>
         </section>
 
-        <section class="products-section">
-            <div class="products-grid" id="productsGrid">
+        <section class="product-crud-interface">
+            <div class="admin-form-container">
+                <h2>Product Details</h2>
+                <form id="productForm" class="product-form">
+                    <input type="hidden" id="productId" value=""> 
+
+                    <label for="productName">Nombre del Producto</label>
+                    <input type="text" id="productName" required>
+
+                    <label for="productDescription">Descripcion</label>
+                    <textarea id="productDescription" rows="4"></textarea>
+
+                    <label for="productPrice">Price ($)</label>
+                    <input type="number" id="productPrice" step="0.01" required>
+
+                    <label for="defaultImageUrl">URL Imagen Default</label>
+                    <input type="url" id="defaultImageUrl" placeholder="https://imagen.com">
+                    <small>Imagen principal, use una URL activa</small>
+
+                    <label for="hoverImageUrl">Imagen segundaria</label>
+                    <input type="url" id="hoverImageUrl" placeholder="https://imagen.com">
+                    <small>Imagen al hacer hover, use una URL activa</small>
+
+                    <label for="productImagesUrls">Imagenes detalles</label>
+                    <textarea id="productImagesUrls" rows="3" placeholder="https://img1.jpg, https://img2.jpg"></textarea>
+                    <small>Pegue las URL separadas por comas para imágenes adicionales en la vista de detalles.</small>
+
+                    <div class="form-actions">
+                        <button type="submit" id="saveProductBtn" class="btn">Agregar producto</button>
+                        <button type="button" id="clearFormBtn" class="btn clear-btn">Limpiar Formulario</button>
+                    </div>
+                </form>
             </div>
 
-            <div class="pagination" id="pagination">
+            <div class="product-list-container">
+                <h2>Productos existentes</h2>
+                <div class="product-grid-admin" id="adminProductList">
+                    <p class="loading-message">Cargando productos</p>
+                </div>
+                <div class="admin-pagination" id="adminPagination">
+                </div>
             </div>
         </section>
     </main>
 
-    
 
     <footer>
         <div class="footer-grid">
@@ -58,7 +92,7 @@
                 <p>Estudio y taller de ceramica de diseño</p>
             </div>
             <div class="footer-column">
-                <h3>Tienda</h3>
+                <a href="/shop.html"><h3>Tienda</h3></a>
                 <ul>
                     <li><a href="#">Coleciones</a></li>
                     <li><a href="#">Vajilla</a></li>
@@ -71,9 +105,12 @@
                 <h3>Informacion</h3>
                 <ul>
                     <li><a href="#">Sobre el taller</a></li>
-                    <li><a href="#">Etiqueta de clases presenciales</a></li>
-                    <li><a href="#">Compras, Envío y Devoluciones</a></li>
+                    <li><a href="#">Etiqueta de clases presenciales</a></li> <!--https://www.amoca.org/studio1/classes/-->
+                    <li><a href="#">Compras, Envío y Devoluciones</a></li> 
+                    <!--mandamos a error con gatitos-->
                     <li><a href="#">Términos de servicio</a></li>
+                    <!--https://www.ceramicsclasseslondon.com/health-and-safety
+                    https://www.ceramicsclasseslondon.com/terms-conditions-->
                 </ul>
             </div>
             <div class="footer-column">
@@ -84,9 +121,8 @@
             </div>
         </div>
         <div class="footer-bottom">
-          <p>&copy; 2025 Pepito Taller de ceramica. Todos los derechos reservados.</p>
+        <p>&copy; 2025 Pepito Taller de ceramica. Todos los derechos reservados.</p>
         </div>
-
     </footer>
         <div id="productDetailModal" class="modal">
         <div class="modal-content product-detail-content">
@@ -95,7 +131,7 @@
                 <div class="product-detail-images">
                     <img id="productDetailMainImage" src="" alt="Product Main Image">
                     <div id="productDetailThumbnails" class="product-detail-thumbnails">
-                        </div>
+                    </div>
                 </div>
                 <div class="product-detail-info">
                     <h2 id="productDetailName"></h2>
@@ -106,13 +142,12 @@
                         <input type="number" id="productQuantity" value="1" min="1">
                         <button id="increaseQuantity">+</button>
                     </div>
-                    <button id="addToCartBtn" class="btn">Comprar</button>
+                    <button id="addToCartBtn" class="btn">Add to Cart</button>
                     <p id="addToCartMessage" class="add-to-cart-message"></p>
                 </div>
             </div>
         </div>
     </div>
-
     <div id="cartModal" class="modal">
         <div class="modal-content cart-content">
             <span class="close-button">&times;</span>
@@ -128,6 +163,10 @@
         </div>
     </div>
 
-    <script src="/store.js"></script>
+
+   <script src="store.js"></script>
+   <script src="crud.js"></script>
+
+
 </body>
 </html>

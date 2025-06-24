@@ -5,15 +5,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const cartCountSpan = document.querySelector('.cart-count');
     const productsPerPage = 10;
     let currentPage = 1;
-    let allProducts = []; // This will store all products fetched from API
+    let allProducts = []; 
 
-    // Airtable API Configuration (Ensure these match your Airtable setup)
     const AIRTABLE_API_TOKEN = 'patrSy9TVR7uQBAXz.1621be16e219e3aece918dff943ff1e5e38672d65c3185175a7c969b176095b9'; // Keep this secure in production!
     const AIRTABLE_BASE_ID = 'appbX0R18ZDRlhXQN';
-    const AIRTABLE_TABLE_NAME = 'Products'; // Make sure this matches your table name exactly
+    const AIRTABLE_TABLE_NAME = 'Products'; 
     const AIRTABLE_API_URL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
 
-    // --- Product Detail Modal Elements ---
+    //  Modal Elements
     const productDetailModal = document.getElementById('productDetailModal');
     const productDetailCloseBtn = productDetailModal.querySelector('.close-button');
     const productDetailMainImage = document.getElementById('productDetailMainImage');
@@ -26,9 +25,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const increaseQuantityBtn = document.getElementById('increaseQuantity');
     const addToCartBtn = document.getElementById('addToCartBtn');
     const addToCartMessage = document.getElementById('addToCartMessage');
-    let currentProductInModal = null; // To store the product object currently displayed
+    let currentProductInModal = null; 
 
-    // --- Cart Modal Elements ---
+    // Cart Elements 
     const cartModal = document.getElementById('cartModal');
     const openCartBtn = document.getElementById('openCartBtn');
     const cartCloseBtn = cartModal.querySelector('.close-button');
@@ -37,68 +36,58 @@ document.addEventListener('DOMContentLoaded', () => {
     const checkoutBtn = document.getElementById('checkoutBtn');
     const clearCartBtn = document.getElementById('clearCartBtn');
 
-    // --- Cart Array (Local Storage) ---
+  // local storage
     let cart = JSON.parse(localStorage.getItem('pepito_ceramica_cart')) || [];
 
-    // --- Helper Functions ---
-
-    // Function to save cart to local storage
     const saveCart = () => {
         localStorage.setItem('pepito_ceramica_cart', JSON.stringify(cart));
         updateCartCount();
-        renderCartItems(); // Re-render cart display if modal is open
+        renderCartItems(); 
     };
 
-    // Function to update cart count in header
+    // Actualizar carrito en nav
     const updateCartCount = () => {
         const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
         cartCountSpan.textContent = totalItems;
     };
 
-    // Function to open any modal
+    // Abrir y cerrar modal
     const openModal = (modalElement) => {
         modalElement.classList.add('active');
-        document.body.style.overflow = 'hidden'; // Prevent scrolling background
+        document.body.style.overflow = 'hidden';
     };
-
-    // Function to close any modal
     const closeModal = (modalElement) => {
         modalElement.classList.remove('active');
         document.body.style.overflow = 'auto'; 
         addToCartMessage.style.display = 'none'; 
     };
 
-    // --- Product Detail Modal Functions ---
+    // Detalles de productos 
 
     const renderProductDetailModal = (product) => {
-        currentProductInModal = product; // Store the product for add-to-cart logic
+        currentProductInModal = product; 
 
         productDetailName.textContent = product.name;
         productDetailPrice.textContent = `$${parseFloat(product.price).toFixed(2)} ARS`;
         productDetailDescription.textContent = product.description;
-        productQuantityInput.value = 1; // Reset quantity to 1
+        productQuantityInput.value = 1; 
 
-        // Clear existing thumbnails
         productDetailThumbnails.innerHTML = '';
 
-        // Handle product images for detail view
+        // imagenes de vista detalle
         const imagesToDisplay = [];
         if (product.defaultImage) imagesToDisplay.push(product.defaultImage);
-        // Assuming product.images is an array from Airtable (new field)
         if (product.images && product.images.length > 0) {
-            // Add other images, ensuring we don't duplicate defaultImage if it's in images array
             product.images.forEach(img => {
                 if (img !== product.defaultImage) {
                     imagesToDisplay.push(img);
                 }
             });
         } else if (product.hoverImage && product.hoverImage !== product.defaultImage) {
-            // Fallback: if no dedicated 'images' array, use hoverImage as secondary
             imagesToDisplay.push(product.hoverImage);
         }
 
 
-        // Set main image and create thumbnails
         if (imagesToDisplay.length > 0) {
             productDetailMainImage.src = imagesToDisplay[0];
             productDetailMainImage.alt = product.name;
@@ -119,15 +108,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 productDetailThumbnails.appendChild(thumb);
             });
         } else {
-            // Fallback for no images
-            productDetailMainImage.src = 'https://via.placeholder.com/600x400?text=No+Image+Available';
+            // Fallback si no hay imagenes images
+            productDetailMainImage.src = 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fvector%2F404-error-web-page-with-cute-cat-gm1305033045-396020757&psig=AOvVaw3d2sErDRPvImWdnXoHUdPv&ust=1750885569354000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNCtu5b7io4DFQAAAAAdAAAAABAE:https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.istockphoto.com%2Fvector%2F404-error-web-page-with-cute-cat-gm1305033045-396020757&psig=AOvVaw3d2sErDRPvImWdnXoHUdPv&ust=1750885569354000&source=images&cd=vfe&opi=89978449&ved=0CBEQjRxqFwoTCNCtu5b7io4DFQAAAAAdAAAAABAE';
             productDetailThumbnails.innerHTML = '';
         }
 
         openModal(productDetailModal);
     };
 
-    // Quantity selector logic
+    // Selector de cantidad card 
     decreaseQuantityBtn.addEventListener('click', () => {
         let currentQuantity = parseInt(productQuantityInput.value);
         if (currentQuantity > 1) {
@@ -140,14 +129,14 @@ document.addEventListener('DOMContentLoaded', () => {
         productQuantityInput.value = currentQuantity + 1;
     });
 
-    // --- Cart Logic ---
+    // Logica carrito
 
     const addToCart = () => {
         if (!currentProductInModal) return;
 
         const quantity = parseInt(productQuantityInput.value);
         if (quantity < 1) {
-            displayAddToCartMessage("Quantity must be at least 1.", true);
+            displayAddToCartMessage("Agregue al menos una unidad", true);
             return;
         }
 
@@ -179,7 +168,7 @@ document.addEventListener('DOMContentLoaded', () => {
         addToCartMessage.style.display = 'block';
         setTimeout(() => {
             addToCartMessage.style.display = 'none';
-        }, 3000); // Hide message after 3 seconds
+        }, 3000); 
     };
 
 
@@ -331,12 +320,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         } catch (error) {
             console.error('Error fetching products:', error);
-            productsGrid.innerHTML = '<p>Failed to load products. Please check your Airtable API key, base ID, table name, and network connection.</p>';
+            productsGrid.innerHTML = '<p>Fallo cargar productos, revise Airtable API key.</p>';
         }
     };
 
 
-    // Function to render products for the current page
+    // Pagina actual
     function renderProducts(page) {
         productsGrid.innerHTML = '';
         const start = (page - 1) * productsPerPage;
@@ -353,7 +342,7 @@ document.addEventListener('DOMContentLoaded', () => {
             productCard.classList.add('product-card');
             productCard.dataset.defaultImage = product.defaultImage;
             productCard.dataset.hoverImage = product.hoverImage;
-            productCard.dataset.productId = product.id; // Store product ID on the card
+            productCard.dataset.productId = product.id; 
 
             productCard.innerHTML = `
                 <div class="product-image-container">
@@ -366,7 +355,7 @@ document.addEventListener('DOMContentLoaded', () => {
             productsGrid.appendChild(productCard);
         });
 
-        // Attach event listeners for "View Product" buttons
+        // event listeners ver productos
         productsGrid.querySelectorAll('.view-product-btn').forEach(button => {
             button.addEventListener('click', (event) => {
                 const productId = event.target.dataset.id;
@@ -425,7 +414,7 @@ document.addEventListener('DOMContentLoaded', () => {
             paginationContainer.appendChild(pageButton);
         }
 
-        // Next button
+        // button Siguiente
         const nextButton = document.createElement('button');
         nextButton.textContent = 'Siguiente';
         nextButton.disabled = currentPage === totalPages;
@@ -490,7 +479,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     updateCartCount(); 
     if (productsGrid && paginationContainer) {
-        fetchProducts(); // Start fetching products
+        fetchProducts();
     }
 
     const viewOnMapBtn = document.querySelector('.view-on-map');

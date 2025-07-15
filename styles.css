@@ -139,7 +139,7 @@ header {
     color: #555;
 }
 
-/* Store Preview (Carousel) */
+/*Productos destacados (Carousel) */
 .store-preview {
     padding: 60px 0;
     text-align: center;
@@ -163,7 +163,7 @@ header {
     scrollbar-color: #ccc #f1f1f1; 
 }
 
-/* For WebKit browsers (Chrome, Safari) */
+/*  WebKit (Chrome, Safari) */
 .carousel-container::-webkit-scrollbar {
     height: 8px;
 }
@@ -228,7 +228,7 @@ header {
     color: white;
 }
 
-/* Classes Section */
+/* Clases */
 .classes-section, .projects-section {
     padding: 80px 5%;
     display: flex;
@@ -408,15 +408,13 @@ footer {
     }
 
     .carousel-item {
-        width: 250px; /* Smaller items for very small screens */
+        width: 250px; 
     }
 }
 
 
 
 ___________
-
-/* General Body and Typography */
 body {
     font-family: 'Raleway', sans-serif;
     margin: 0;
@@ -424,7 +422,7 @@ body {
     box-sizing: border-box;
     color: #333;
     line-height: 1.6;
-    background-color: #f8f8f8; /* Light background similar to the site */
+    background-color: #f8f8f8; 
 }
 
 h1, h2, h3 {
@@ -444,7 +442,7 @@ a:hover {
 
 .btn {
     display: inline-block;
-    background-color: #A9A9A9; /* A medium gray inspired by the image */
+    background-color: #A9A9A9; 
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -456,10 +454,8 @@ a:hover {
 }
 
 .btn:hover {
-    background-color: #808080; /* Darker gray on hover */
+    background-color: #808080; 
 }
-
-/* Header */
 
 
 .main-nav {
@@ -498,8 +494,8 @@ a:hover {
 }
 
 .main-nav .logo img {
-    height: 40px; /* Adjust as needed */
-    display: block; /* Remove extra space below image */
+    height: 40px; 
+    display: block; 
 }
 
 .nav-utility {
@@ -529,21 +525,21 @@ a:hover {
     font-size: 0.7em;
     padding: 2px 6px;
     border-radius: 50%;
-    margin-left: -10px; /* Adjust to overlap cart icon slightly */
+    margin-left: -10px; /
 }
 
-/* Header Hero Section for Classes Page */
+/* Header Hero Section Clases  */
 .header-hero-classes {
     position: relative;
     width: 100%;
-    height: 350px; /* Adjust height as needed */
+    height: 350px; 
     overflow: hidden;
     display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
     color: white;
-    margin-bottom: 50px; /* Space before content below */
+    margin-bottom: 50px; 
 }
 
 .header-hero-classes img {
@@ -553,7 +549,7 @@ a:hover {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.8); /* Darken image slightly for text readability */
+    filter: brightness(0.8); 
 }
 
 .hero-text-overlay {
@@ -609,7 +605,7 @@ a:hover {
 .classes-main-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px 80px; /* Padding at bottom for overall spacing */
+    padding: 40px 20px 80px; 
 }
 
 /* Page Title Section */
@@ -682,12 +678,11 @@ a:hover {
 .class-card .btn {
     margin: 15px 15px;
     text-align: center;;
-    width: calc(100% - 30px); /* Fill card width */
-    padding: 15px 0; /* Adjust padding for full width button */
+    width: calc(100% - 30px); 
+    padding: 15px 0; 
 }
 
 
-/* Class Reservations Section */
 .class-reservations-section {
     background-color: #fefefe;
     padding: 60px 0;

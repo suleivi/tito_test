@@ -197,7 +197,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <input type="number" value="${item.quantity}" min="1" data-id="${item.id}" class="cart-item-quantity-input">
                             <button class="increase-cart-quantity" data-id="${item.id}">+</button>
                         </div>
-                        <button class="remove-item-btn" data-id="${item.id}">Remove</button>
+                        <button class="remove-item-btn" data-id="${item.id}">Eliminar</button>
                     </div>
                 `;
                 cartItemsList.appendChild(cartItemDiv);

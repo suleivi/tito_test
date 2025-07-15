@@ -7,7 +7,8 @@
     <link rel="icon" type="image/png" href="assets/favicon.png">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!--iconos -->
+
 </head>
 <body>
     <header>
@@ -41,7 +42,7 @@
 
         <section class="product-crud-interface">
             <div class="admin-form-container">
-                <h2>Product Details</h2>
+                <h2>Detalles de productos</h2>
                 <form id="productForm" class="product-form">
                     <input type="hidden" id="productId" value=""> 
 
@@ -51,10 +52,10 @@
                     <label for="productDescription">Descripcion</label>
                     <textarea id="productDescription" rows="4"></textarea>
 
-                    <label for="productPrice">Price ($)</label>
+                    <label for="productPrice">Precio ($)</label>
                     <input type="number" id="productPrice" step="0.01" required>
 
-                    <label for="defaultImageUrl">URL Imagen Default</label>
+                    <label for="defaultImageUrl">URL imagen default</label>
                     <input type="url" id="defaultImageUrl" placeholder="https://imagen.com">
                     <small>Imagen principal, use una URL activa</small>
 
@@ -62,7 +63,7 @@
                     <input type="url" id="hoverImageUrl" placeholder="https://imagen.com">
                     <small>Imagen al hacer hover, use una URL activa</small>
 
-                    <label for="productImagesUrls">Imagenes detalles</label>
+                    <label for="productImagesUrls">Imagenes detalle del producto</label>
                     <textarea id="productImagesUrls" rows="3" placeholder="https://img1.jpg, https://img2.jpg"></textarea>
                     <small>Pegue las URL separadas por comas para imágenes adicionales en la vista de detalles.</small>
 
@@ -105,12 +106,9 @@
                 <h3>Informacion</h3>
                 <ul>
                     <li><a href="#">Sobre el taller</a></li>
-                    <li><a href="#">Etiqueta de clases presenciales</a></li> <!--https://www.amoca.org/studio1/classes/-->
+                    <li><a href="#">Etiqueta de clases presenciales</a></li> 
                     <li><a href="#">Compras, Envío y Devoluciones</a></li> 
-                    <!--mandamos a error con gatitos-->
                     <li><a href="#">Términos de servicio</a></li>
-                    <!--https://www.ceramicsclasseslondon.com/health-and-safety
-                    https://www.ceramicsclasseslondon.com/terms-conditions-->
                 </ul>
             </div>
             <div class="footer-column">

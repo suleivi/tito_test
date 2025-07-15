@@ -98,7 +98,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 thumb.alt = `${product.name} Thumbnail ${index + 1}`;
                 thumb.classList.add('product-thumbnail');
                 if (index === 0) {
-                    thumb.classList.add('active-thumbnail'); // Mark first as active
+                    thumb.classList.add('active-thumbnail'); 
                 }
                 thumb.addEventListener('click', () => {
                     productDetailMainImage.src = imgUrl;

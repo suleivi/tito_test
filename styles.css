@@ -1,14 +1,5 @@
-body {
-  margin: 0;
-  
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  line-height: 1.6;
-  color: #333;
-  background-color: #ffff;
-}
 
 
-/* General Body */
 body {
     font-family: 'Raleway', sans-serif;
     margin: 0;
@@ -34,7 +25,7 @@ a:hover {
 
 .btn {
     display: inline-block;
-    background-color: #A9A9A9; /* A medium gray inspired by the image */
+    background-color: #A9A9A9; 
     color: white;
     padding: 12px 25px;
     border-radius: 5px;
@@ -44,7 +35,7 @@ a:hover {
 }
 
 .btn:hover {
-    background-color: #808080; /* Darker gray on hover */
+    background-color: #808080; 
 }
 
 /* Header */
@@ -55,12 +46,13 @@ header {
 }
 
 .header-top {
-    background-color: #f2f2f2; /* Light background for the top bar */
+    background-color: #f2f2f2;
     text-align: center;
     padding: 8px 0;
     font-size: 0.9em;
     color: #666;
 }
+
 
 .main-nav {
     display: flex;
@@ -94,7 +86,7 @@ header {
 .hero-section {
     position: relative;
     width: 100%;
-    height: 600px; /* Adjust height as needed */
+    height: 600px; 
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -110,7 +102,7 @@ header {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: brightness(0.7); /* Darken image slightly for text readability */
+    filter: brightness(0.7); 
 }
 
 .hero-text {
@@ -147,7 +139,7 @@ header {
     color: #555;
 }
 
-/* Store Preview Section (Carousel) */
+/* Store Preview (Carousel) */
 .store-preview {
     padding: 60px 0;
     text-align: center;
@@ -163,12 +155,12 @@ header {
 .carousel-container {
     width: 90%;
     margin: 0 auto;
-    overflow-x: scroll; /* Enables horizontal scrolling */
-    -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
-    white-space: nowrap; /* Prevents items from wrapping */
-    padding-bottom: 20px; /* Space for scrollbar */
-    scrollbar-width: thin; /* Firefox */
-    scrollbar-color: #ccc #f1f1f1; /* Firefox */
+    overflow-x: scroll; 
+    -webkit-overflow-scrolling: touch; 
+    white-space: nowrap; 
+    padding-bottom: 20px; 
+    scrollbar-width: thin; 
+    scrollbar-color: #ccc #f1f1f1; 
 }
 
 /* For WebKit browsers (Chrome, Safari) */
@@ -187,13 +179,13 @@ header {
 }
 
 .carousel {
-    display: inline-flex; /* Allows items to be side-by-side */
-    gap: 30px; /* Space between carousel items */
+    display: inline-flex; 
+    gap: 30px; 
 }
 
 .carousel-item {
-    flex: 0 0 auto; /* Prevent items from shrinking or growing */
-    width: 300px; /* Fixed width for each item */
+    flex: 0 0 auto; 
+    width: 300px; 
     text-align: center;
     background-color: white;
     padding: 20px;
@@ -247,7 +239,7 @@ header {
 
 .classes-content, .projects-content {
     display: flex;
-    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    flex-wrap: wrap; 
     gap: 40px;
     max-width: 1200px;
     align-items: center;
@@ -255,7 +247,7 @@ header {
 
 .classes-content img, .projects-content img {
     flex: 1;
-    min-width: 400px; /* Ensures image doesn't get too small */
+    min-width: 400px; 
     height: auto;
     object-fit: cover;
     border-radius: 8px;
@@ -264,7 +256,7 @@ header {
 
 .classes-text, .projects-text {
     flex: 1;
-    min-width: 400px; /* Ensures text block doesn't get too small */
+    min-width: 400px; 
 }
 
 .classes-text h2, .projects-text h2 {
@@ -279,7 +271,6 @@ header {
     color: #666;
 }
 
-/* Reverse order for projects section */
 .projects-section .projects-content {
     flex-direction: row-reverse;
 }
@@ -469,11 +460,6 @@ a:hover {
 }
 
 /* Header */
-.classes-header {
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.02);
-}
 
 
 .main-nav {
@@ -703,7 +689,7 @@ a:hover {
 
 /* Class Reservations Section */
 .class-reservations-section {
-    background-color: #fefefe; /* Slightly whiter background for this section */
+    background-color: #fefefe;
     padding: 60px 0;
     border-top: 1px solid #eee;
     margin-bottom: 80px;
@@ -753,7 +739,7 @@ a:hover {
     font-size: 1.4em;
     margin-bottom: 20px;
     color: #555;
-    font-family: 'Raleway', sans-serif; /* Keep Raleway for these sub-headings */
+    font-family: 'Raleway', sans-serif; 
     font-weight: 700;
 }
 
@@ -763,7 +749,7 @@ a:hover {
     margin-bottom: 8px;
 }
 
-/* Calendar Styling */
+/* Calendario */
 .calendar-column {
     text-align: center;
 }
@@ -803,27 +789,26 @@ a:hover {
 }
 
 .calendar-grid span {
-    background-color: #fdf2e8; /* Light peach background */
+    background-color: #fdf2e8; 
     padding: 12px 0;
     border-radius: 5px;
     cursor: pointer;
     font-weight: 600;
     color: #555;
     transition: background-color 0.2s ease, color 0.2s ease;
-    user-select: none; /* Prevent text selection */
+    user-select: none; 
 }
 
 .calendar-grid span:hover {
-    background-color: #f7e7da; /* Slightly darker peach on hover */
+    background-color: #f7e7da; 
 }
 
-/* Example for selected date (add with JS for functionality) */
+
 .calendar-grid span.selected {
-    background-color: #A9A9A9; /* Gray for selected */
+    background-color: #A9A9A9; 
     color: white;
 }
 
-/* Time Slot Column */
 .time-slot-column p {
     text-align: center;
     color: #888;
@@ -833,14 +818,14 @@ a:hover {
 
 
 
-/* Site Footer */
+/* Footer */
 .site-footer {
-    background-color: #1a1a1a; /* Dark footer background */
+    background-color: #1a1a1a;
     color: white;
     padding: 40px 20px;
     text-align: center;
     font-size: 0.9em;
-    position: relative; /* For chat bubble positioning */
+    position: relative; 
 }
 
 .site-footer .social-icons {
@@ -883,23 +868,7 @@ a:hover {
     color: #ddd;
 }
 
-.chat-bubble {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #A9A9A9; /* Match branding */
-    color: white;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.5em;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    cursor: pointer;
-    z-index: 1000;
-}
+
 
 /* Responsive Design */
 @media (max-width: 1024px) {
@@ -980,17 +949,7 @@ a:hover {
         padding: 20px;
     }
 
-    .footer-cta-sections {
-        grid-template-columns: 1fr;
-    }
 
-    .newsletter-signup form {
-        flex-direction: column;
-    }
-    .newsletter-signup input[type="email"],
-    .newsletter-signup .btn {
-        width: 100%;
-    }
 
     .footer-bottom-links a {
         display: block;
@@ -1030,12 +989,12 @@ a:hover {
 
 .products-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* 3-4 columns typically */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 30px;
-    margin-bottom: 60px; /* Space for pagination below */
+    margin-bottom: 60px; 
 }
 
-/* Reusing .class-card styles for product cards as they are visually similar */
+/* Mismos estilos que  .class-card  */
 .product-card {
     background-color: white;
     border-radius: 8px;
@@ -1063,7 +1022,7 @@ a:hover {
     height: 100%;
     object-fit: cover;
     display: block;
-    transition: opacity 0.3s ease; /* For smooth image transition on hover */
+    transition: opacity 0.3s ease; /* transicion hover */
 }
 
 .product-card h3 {
@@ -1081,8 +1040,8 @@ a:hover {
 
 .product-card .btn {
     margin: 0 15px;
-    width: calc(100% - 30px); /* Fill card width */
-    padding: 12px 0; /* Adjust padding for full width button */
+    width: calc(100% - 30px); 
+    padding: 12px 0; 
 }
 
 /* Pagination Styles */
@@ -1116,7 +1075,7 @@ a:hover {
     cursor: default;
 }
 
-/* Responsive Adjustments for Store Page */
+/* Responsive tienda */
 @media (max-width: 1200px) {
     .store-main-content {
         padding: 0 15px 60px;
@@ -1293,17 +1252,16 @@ a:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1em;
-    box-sizing: border-box; /* Include padding and border in element's total width and height */
-    font-family: 'Raleway', sans-serif; /* Ensure consistent font */
-}
+    box-sizing: border-box; 
+    font-family: 'Raleway', sans-serif; }
 
 .custom-form textarea {
-    resize: vertical; /* Allow vertical resizing */
+    resize: vertical; 
     min-height: 100px;
 }
 
 .custom-form select {
-    appearance: none; /* Remove default select arrow */
+    appearance: none; 
     -webkit-appearance: none;
     -moz-appearance: none;
     background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23666666%22%20d%3D%22M287%2C114.7L146.2%2C255.5L5.4%2C114.7H287z%22%2F%3E%3C%2Fsvg%3E'); /* Custom arrow */
@@ -1483,7 +1441,7 @@ a:hover {
 
 .about-founder-section {
     margin-bottom: 80px;
-    background-color: #fefefe; /* Lighter background for contrast */
+    background-color: #fefefe; 
     padding: 40px;
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.03);
@@ -1500,7 +1458,7 @@ a:hover {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
-    align-items: flex-start; /* Align text and image to top */
+    align-items: flex-start; 
 }
 
 .founder-text {
@@ -1517,7 +1475,7 @@ a:hover {
 
 .founder-text .social-links a {
     font-weight: 600;
-    color: #A9A9A9; /* Match brand color */
+    color: #A9A9A9;
     margin-right: 15px;
 }
 
@@ -1526,7 +1484,7 @@ a:hover {
 }
 
 .founder-image {
-    flex: 1; /* Image takes less space, allowing text to expand */
+    flex: 1; 
     min-width: 250px;
     text-align: center;
 }
@@ -1534,10 +1492,10 @@ a:hover {
 .founder-image img {
     width: 100%;
     height: auto;
-    max-height: 500px; /* Limit height to prevent overly tall images */
+    max-height: 500px; 
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.9);
 }
 
 
@@ -1591,38 +1549,36 @@ a:hover {
 
 
 /*modalsssssssss8*/ 
-/* Add to your existing styles.css */
 
-/* Modal Styles (General for Product Detail & Cart) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1000; /* Sit on top */
+    display: none; 
+    position: fixed; 
+    z-index: 1000; 
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    padding: 20px; /* Padding around the modal content */
-    box-sizing: border-box; /* Include padding in width/height calculation */
+    width: 100%; 
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.6); 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px;
+    box-sizing: border-box; 
 }
 
 .modal.active {
-    display: flex; /* Show the modal */
+    display: flex; 
 }
 
 .modal-content {
     background-color: #fefefe;
-    margin: auto; /* For vertical centering */
+    margin: auto; 
     padding: 30px;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
     position: relative;
-    max-height: 90vh; /* Max height to prevent overflow on smaller screens */
-    overflow-y: auto; /* Enable scrolling within the modal content */
+    max-height: 90vh; 
+    overflow-y: auto; 
 }
 
 .close-button {
@@ -1646,13 +1602,13 @@ a:hover {
 
 /* Product Detail Modal Specific Styles */
 .product-detail-content {
-    max-width: 900px; /* Adjust max width for product detail */
-    width: 95%; /* Responsive width */
+    max-width: 900px; 
+    width: 95%; 
 }
 
 .product-detail-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr; /* Image on left, info on right */
+    grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
 
@@ -1662,8 +1618,8 @@ a:hover {
 
 #productDetailMainImage {
     width: 100%;
-    height: 400px; /* Fixed height for main image */
-    object-fit: contain; /* Contain to show full image without cropping for detail view */
+    height: 400px; 
+    object-fit: contain; 
     border: 1px solid #eee;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -1673,7 +1629,7 @@ a:hover {
     display: flex;
     justify-content: center;
     gap: 10px;
-    flex-wrap: wrap; /* Allow thumbnails to wrap */
+    flex-wrap: wrap; 
 }
 
 .product-detail-thumbnails img {
@@ -1741,13 +1697,12 @@ a:hover {
     border: 1px solid #ddd;
     border-radius: 5px;
     text-align: center;
-    font-size: 1em;
-    -moz-appearance: textfield; /* Hide arrows in Firefox */
+    font-size: 1em;  
 }
 
 .product-quantity-selector input[type="number"]::-webkit-outer-spin-button,
 .product-quantity-selector input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none; /* Hide arrows in Chrome/Safari */
+    -webkit-appearance: none; 
     margin: 0;
 }
 
@@ -1761,11 +1716,11 @@ a:hover {
     text-align: center;
     margin-top: 15px;
     font-weight: bold;
-    color: green; /* Default success message color */
-    display: none; /* Hidden by default */
+    color: green; 
+    display: none; 
 }
 .add-to-cart-message.error {
-    color: red; /* Error message color */
+    color: red; 
 }
 
 
@@ -1864,8 +1819,8 @@ a:hover {
 
 
 .remove-item-btn {
-    background-color: #f8d7da; /* Light red */
-    color: #721c24; /* Darker red */
+    background-color: #f8d7da;
+    color: #721c24; 
     border: 1px solid #f5c6cb;
     padding: 5px 10px;
     border-radius: 5px;
@@ -1903,18 +1858,18 @@ a:hover {
 }
 
 .cart-summary .clear-cart-btn {
-    background-color: #dc3545; /* Red for clear cart */
-    border-color: #dc3545;
+    background-color: #c75863; 
+    border-color: #ef5968;
 }
 .cart-summary .clear-cart-btn:hover {
-    background-color: #c82333;
+    background-color: #c75863;
 }
 
 
-/* Responsive Styles for Modals */
+/* Responsive Modals */
 @media (max-width: 768px) {
     .product-detail-grid {
-        grid-template-columns: 1fr; /* Stack content on smaller screens */
+        grid-template-columns: 1fr; 
     }
     #productDetailMainImage {
         height: 300px;
@@ -1981,9 +1936,9 @@ a:hover {
 
 .product-crud-interface {
     display: grid;
-    grid-template-columns: 1fr 2fr; /* Form on left, list on right */
+    grid-template-columns: 1fr 2fr; 
     gap: 40px;
-    align-items: start; /* Align content to the top */
+    align-items: start; 
     background-color: #fefefe;
     padding: 40px;
     border-radius: 8px;

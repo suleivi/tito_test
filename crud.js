@@ -14,14 +14,16 @@ const adminProductList = document.getElementById('adminProductList');
     let adminAllProducts = []; 
     let adminCurrentPage = 1;
     const adminProductsPerPage = 9; 
-    const AIRTABLE_API_TOKEN = 'patrSy9TVR7uQBAXz.1621be16e219e3aece918dff943ff1e5e38672d65c3185175a7c969b176095b9'; // Keep this secure in production!
+    const AIRTABLE_API_TOKEN = 'patrSy9TVR7uQBAXz.1621be16e219e3aece918dff943ff1e5e38672d65c3185175a7c969b176095b9'; 
     const AIRTABLE_BASE_ID = 'appbX0R18ZDRlhXQN';
     const AIRTABLE_TABLE_NAME = 'Products'; 
     const AIRTABLE_API_URL = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${AIRTABLE_TABLE_NAME}`;
+
+    //chequear que existan productos en la lista de airtable
     const fetchAdminProducts = async () => {
         if (!adminProductList) return; 
 
-        adminProductList.innerHTML = '<p class="loading-message">Loading products...</p>';
+        adminProductList.innerHTML = '<p class="loading-message">Cargando productos...</p>';
 
         try {
             const response = await fetch(AIRTABLE_API_URL, {
@@ -30,26 +32,26 @@ const adminProductList = document.getElementById('adminProductList');
             if (!response.ok) {
                 const errorData = await response.json();
                 console.error('Airtable API Error (Admin Fetch):', response.status, response.statusText, errorData);
-                adminProductList.innerHTML = '<p class="error-message">Failed to load products. Check console for details.</p>';
+                adminProductList.innerHTML = '<p class="error-message">Falló cargar productos, chequee la consola.</p>';
                 throw new Error(`HTTP error! status: ${response.status}`);
             }
             const data = await response.json();
 
             adminAllProducts = data.records.map(record => {
-              
-                const defaultImg = record.fields.DefaultImage?.[0]?.url;
-                const hoverImg = record.fields.HoverImage?.[0]?.url;
+                const defaultImg = record.fields.DefaultImage?.[0]?.url; //tengo 3 estados para las imagenes, primero carga el default, luego el mouse over, y por separado "el resto"
+                const hoverImg = record.fields.HoverImage?.[0]?.url; //probablemente para esto habia una mejor logica, pero fue el camino mas corto que enconte para hacer el efecto de mouse over
                 const productImgs = (record.fields.ProductImages || []).map(img => img.url);
+            
 
                 return {
                     id: record.id,
-                    name: record.fields.Name || 'Unnamed Product',
+                    name: record.fields.Name || 'Productos sin nombre',
                     description: record.fields.Description || '',
                     price: record.fields.Price || 0,
                     defaultImage: defaultImg,
                     hoverImage: hoverImg,
                     productImages: productImgs,
-                    // Store the raw field values for easier re-population of form
+                    // valores vacios
                     rawDefaultImage: record.fields.DefaultImage || [],
                     rawHoverImage: record.fields.HoverImage || [],
                     rawProductImages: record.fields.ProductImages || []
@@ -61,7 +63,7 @@ const adminProductList = document.getElementById('adminProductList');
 
         } catch (error) {
             console.error('Error cargando productos:', error);
-            adminProductList.innerHTML = `<p class="error-message">Error: ${error.message}. No se pudieron cargar los productos.</p>`;
+            adminProductList.innerHTML = `<p class="error-message">Error: ${error.message}. Error en cargar los productos.</p>`;
         }
     };
     fetchAdminProducts();
@@ -82,9 +84,9 @@ const adminProductList = document.getElementById('adminProductList');
             const productCard = document.createElement('div');
             productCard.classList.add('product-admin-card');
             productCard.innerHTML = `
-                <img src="${product.defaultImage || 'https://via.placeholder.com/150x150?text=No+Image'}" alt="${product.name}">
+                <img src="${product.defaultImage || 'https://tenor.com/es/view/%E1%BB%A7a-gif-12541871347144439008'}" alt="${product.name}">
                 <h3>${product.name}</h3>
-                <p>$${parseFloat(product.price).toFixed(2)} USD</p>
+                <p>$${parseFloat(product.price).toFixed(2)} ARS</p>
                 <div class="admin-card-actions">
                     <button class="delete-btn" data-id="${product.id}">Borrar</button>
                     <button class="edit-btn" data-id="${product.id}">Editar</button>
@@ -125,7 +127,7 @@ const adminProductList = document.getElementById('adminProductList');
         if (adminAllProducts.length === 0) { return; }
 
         const prevButton = document.createElement('button');
-        prevButton.textContent = 'Previous';
+        prevButton.textContent = 'Ant';
         prevButton.disabled = adminCurrentPage === 1;
         prevButton.addEventListener('click', () => {
             if (adminCurrentPage > 1) { adminCurrentPage--; renderAdminProductList(adminCurrentPage); updateAdminPaginationButtons(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
@@ -143,7 +145,7 @@ const adminProductList = document.getElementById('adminProductList');
         }
 
         const nextButton = document.createElement('button');
-        nextButton.textContent = 'Next';
+        nextButton.textContent = 'Sig';
         nextButton.disabled = adminCurrentPage === totalPages;
         nextButton.addEventListener('click', () => {
             if (adminCurrentPage < totalPages) { adminCurrentPage++; renderAdminProductList(adminCurrentPage); updateAdminPaginationButtons(); window.scrollTo({ top: 0, behavior: 'smooth' }); }
@@ -217,7 +219,7 @@ const adminProductList = document.getElementById('adminProductList');
         const url = id ? `${AIRTABLE_API_URL}/${id}` : AIRTABLE_API_URL;
 
         saveProductBtn.disabled = true;
-        saveProductBtn.textContent = id ? 'Updating...' : 'Adding...';
+        saveProductBtn.textContent = id ? 'Actualizando...' : 'Agregando...';
 
         try {
             const response = await fetch(url, {
